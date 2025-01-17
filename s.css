@@ -1,0 +1,8 @@
+img{
+    border: 10px solid black;
+    list-style-image: -moz-radial-gradient(10);
+}
+.product-image{
+    padding: 10px;
+
+}
