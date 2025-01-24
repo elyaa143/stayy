@@ -1,0 +1,390 @@
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(./f371d0864ad08824811652bb0881bd5e.jpg); /* Replace with your image path */
+    /* Prevents the image from repeating */
+    color: #333; /* Dark grey text for readability */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #33333384;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideInHeader 1s ease-out;
+}
+
+.header .logo {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000; /* Soft coral color for the logo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+    animation: logoGlow 1.5s infinite alternate;
+    left: 100%;
+}
+
+.header .logo:hover {
+    color: #760a0a; /* Bright yellow on hover */
+}
+
+.header .nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.header .nav ul li {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    animation: fadeInNav 2s ease-out forwards;
+}
+
+.header .nav ul li a {
+    text-decoration: none;
+    color: #ebf7ff;
+    background-color: #33333384;
+    border-radius: 0 10px;
+}
+
+.header .nav ul li:hover {
+    color: #72140b;
+    transform: scale(1.1);
+    text-decoration: none;
+    border-radius: 0 10px;
+}
+
+/* Keyframe Animations */
+@keyframes slideInHeader {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoGlow {
+    0% {
+        text-shadow: 0 0 10px #72140b, 0 0 20px #72140b;
+    }
+    100% {
+        text-shadow: 0 0 20px #72140b, 0 0 30px #72140b;
+    }
+}
+
+@keyframes fadeInNav {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    animation: fadeInSection 2s ease-out;
+}
+
+@keyframes fadeInSection {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Albums Section */
+.albums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.album {
+   
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: albumFloat 2s infinite alternate ease-in-out;
+}
+
+@keyframes albumFloat {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.album img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    animation: imageBounce 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes imageBounce {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.album h3 {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    color: #51120c; /* Soft coral color for the title */
+}
+
+.album p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.album:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.album:hover img {
+    transform: scale(1.05);
+}
+
+/* Skizo Section */
+.skizo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    animation: skizoRotate 10s linear infinite;
+}
+
+@keyframes skizoRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.skizo-gallery img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transform: scale(0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: skizoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes skizoGlow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #72140b, 0 0 20px #72140b;
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #72140b, 0 0 40px #72140b;
+    }
+}
+
+.skizo-gallery img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(158, 103, 98, 0.7);
+}
+
+/* Tour Section */
+.tour-dates ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tour-dates ul li {
+    font-size: 1.4rem;
+    margin: 1.5rem 0;
+    color: #000000;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: slideInTour 1s ease-out forwards;
+}
+
+@keyframes slideInTour {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tour-dates ul li:hover {
+    color: #670e06;
+    font-size: large;
+    transform: translateY(-5px);
+}
+
+/* Footer Styles */
+.footer {
+   background-color: #00000072;
+border-radius:  0 10px;
+    padding: 1rem ;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    animation: fadeInFooter 2s ease-out;
+}
+
+@keyframes fadeInFooter {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Hover Effects for Interactive Animations */
+.header .nav ul li:hover,
+.album:hover,
+.skizo-gallery img:hover {
+    cursor: pointer;
+    animation: glow 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #72140b, 0 0 10px #72140b;
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px #72140b, 0 0 20px #72140b;
+    }
+}
+
+
+/* Members Section Animations */
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2rem;
+    animation: fadeInMembers 2s ease-out;
+   
+}
+
+@keyframes fadeInMembers {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.member-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+}
+
+.member-card img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.member-card h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.member-card p {
+    font-size: 1rem;
+    color: #777;
+}
+.member img{
+    border-radius: 0 20px;
+}
+
+#history img {
+    border-radius: 10px;
+}
+
+#history h1 {
+    filter: drop-shadow(0PX 0PX 10PX rgb(92, 71, 71));
+    font-size: 4em;
+}
+
+#history P {
+    font-size: 1.4em;
+    font-style: italic;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+.tour-gallery .gallery img{
+    border-radius: 15px;
+
+}
+.tour-gallery ,.tour-dates h2 {
+    filter: drop-shadow(0PX 0PX 10PX rgb(92, 71, 71));
+    font-size: 2em;
+}
+#world-tour h1{
+    filter: drop-shadow(0PX 0PX 10PX rgb(92, 71, 71));
+    font-size: 3em;
+}
+.tour-dates ,ul li{
+    color: #000000;
+}
